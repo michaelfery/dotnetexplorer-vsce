@@ -52,7 +52,7 @@ function showWebView(choice: Choice, optionLabels: string[]) {
       } else {
         currentPanel = vscode.window.createWebviewPanel(
           'dotnetexplorer',
-          'dotnet explorer',
+          'dotnet CLI Explorer',
           vscode.ViewColumn.Two,
           {
             retainContextWhenHidden: true,
