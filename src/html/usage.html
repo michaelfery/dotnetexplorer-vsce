@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>dotnet explorer</title>
+        <style>
+
+            h2 {
+                display: block;
+                font-size: 1.5em;
+                /* font-size: .5em; */
+                margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+            h3 {
+                display: block;
+                font-size: 1.3em;
+                margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+
+            .home {
+                --light-purple-color: #8E47A0;
+                --purple-color: #5C2D91;
+                --dark-purple-color: #431E70;
+                --main-title-accent-color: var(--light-purple-color);
+                --options-background-color: #EEF0F2;
+                --options-select-color: #212529;
+                --main-board-background: #4D5157;
+                --code-border-left-color: var(--light-purple-color);
+            }
+
+            code {
+                color: white;
+                /* font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace; */
+            }
+
+            .home body.vscode-light {
+                --main-board-background: #20252D;
+            }
+
+            .home .content .options {
+                margin: 1rem 0;
+            }
+
+            .home .options .options_title {
+                margin: 0;
+                margin-bottom: 2rem;
+                color: var(--main-board-title-color);
+                /* letter-spacing: 1px; */
+                margin-bottom: 1rem;
+            }
+
+            .home .options .option {
+                background-color: var(--options-background-color);
+                border-radius: .5rem;
+                color: var(--options-select-color);
+                letter-spacing: 1px;
+                margin: 0;
+                font-weight: bold;
+                margin-bottom: 1rem;
+                padding: .5rem 1rem;
+                border: none;
+            }
+
+            .home .content .board {
+                box-sizing: border-box;
+                background: var(--main-board-background);
+                border-radius: .5rem;
+                border-left: .5rem solid var(--code-border-left-color);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem;
+                line-height: 1.5;
+            }
+
+            .home .title {
+            color: var(--main-title-color);
+            letter-spacing: 1px;
+            margin: 0;
+            }
+            .home .content .title span {
+            color: var(--main-title-accent-color);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="App">
+            <header class="home">
+                <div class="content">
+                    <div>
+                        <div>
+                            <h2 class="title">
+                                <span>dotnet</span> explorer
+                            </h2>
+
+                            <div class="options">
+                                <h3 class="options_title">I want to:</h3>
+                                <div id='firstOption' class='option'>...</div>
+                                <div id='secondOption' class='option'>...</div>
+                                <div id='thirdOption' class='option'>...</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class='boards'>
+                                <h3 class="board_title">Usage</h3>
+                                <div class='board'>
+                                    <code id='usage'>
+                                        ...
+                                    </code>
+                                </div>
+
+                                <div id='noteBoard'>
+                                    <h3 class="board_title">Note</h3>
+                                    <div class='board'>
+                                        <code id='note'>
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        
+        <script>
+            const firstOptionDiv = document.getElementById('firstOption');
+            const secondOptionDiv = document.getElementById('secondOption');
+            const thirdOptionDiv = document.getElementById('thirdOption');
+            const usageDiv = document.getElementById('usage');
+            const noteBoardDiv = document.getElementById('noteBoard');
+            const noteDiv = document.getElementById('note');
+    
+            // Handle the message inside the webview
+            window.addEventListener('message', event => {
+                const message = event.data; // The JSON data our extension sent
+                let choice = message.choice;
+                
+                let firstOption = message.optionLabels[0];
+                let secondOption = message.optionLabels[1];
+                let thirdOption = message.optionLabels[2];
+
+                firstOptionDiv.innerText = firstOption;
+
+                secondOptionDiv.hidden = secondOption == undefined;
+                secondOptionDiv.innerText = secondOption;
+
+                thirdOptionDiv.hidden = thirdOption == undefined;
+                thirdOptionDiv.innerText = thirdOption;
+
+                usageDiv.innerText = choice.usage.split('\n\n').join('\n');
+
+                noteBoardDiv.hidden = choice.nb == undefined;
+                noteDiv.innerText = choice.nb.split('\n\n').join('\n');
+            });
+
+        </script>
+    </body>
+</html>
