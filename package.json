@@ -1,6 +1,6 @@
 {
     "name": "dotnetexplorer",
-    "displayName": "dotnet cli explorer",
+    "displayName": "Dotnet CLI Explorer",
     "description": "Find the right commands you need without digging through the web.",
     "version": "0.0.1",
     "publisher": "mfery",
@@ -31,7 +31,7 @@
         "commands": [
             {
                 "command": "dotnetexplorer.search",
-                "title": "dotnet Explorer : Find a command"
+                "title": "Dotnet CLI Explorer : Find a command"
             }
         ]
     },
