@@ -1,14 +1,27 @@
 {
     "name": "dotnetexplorer",
-    "displayName": "dotnetexplorer",
+    "displayName": "dotnet cli explorer",
     "description": "Find the right commands you need without digging through the web.",
     "version": "0.0.1",
     "publisher": "mfery",
     "engines": {
         "vscode": "^1.31.0"
     },
+    "icon": "media/logo.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/michaelfery/dotnetexplorer-vsce"
+    },
+    "bugs": {
+        "url": "https://github.com/michaelfery/dotnetexplorer-vsce/issues"
+    },
     "categories": [
         "Other"
+    ],
+    "keywords": [
+        ".Net",
+        "dotnet",
+        "cli"
     ],
     "activationEvents": [
         "onCommand:dotnetexplorer.search"
