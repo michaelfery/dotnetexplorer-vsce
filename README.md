@@ -1,4 +1,4 @@
-# Service Fabric Extension for Visual Studio Code
+# dotnet CLI Explorer Extension for Visual Studio Code
 
 A [Visual Studio Code](https://code.visualstudio.com/) extension that provides support for .NET CLI (Command Line Interface) in Visual Studio Code.
 
@@ -6,7 +6,19 @@ A [Visual Studio Code](https://code.visualstudio.com/) extension that provides s
 
 * Finc Commands through a multistep quickpick workflow.
 
-![Service Fabric Commands in Visual Studio Code](./media/commands.png)
+![dotnet CLI Commands in Visual Studio Code](./media/commands.png)
+
+![dotnet CLI Options Step 1](./media/options_1.png)
+
+![dotnet CLI Options Step 2](./media/options_2.png)
+
+* Once an option is chosen, an information message displays the right command.. The use can copy the command to the clipboard for further usage.
+
+![dotnet explorer information message](./media/message.png)
+
+* The user can ask for details and a webview with usage and note  is displayed.
+
+![dotnet explorer Webview](./media/webview.png)
 
 ## Requirements
 
