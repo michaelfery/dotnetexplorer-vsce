@@ -4,7 +4,7 @@ A [Visual Studio Code](https://code.visualstudio.com/) extension that provides s
 
 ## Features
 
-* Finc Commands through a multistep quickpick workflow.
+* Find Commands through a multistep quickpick workflow.
 
 ![dotnet CLI Commands in Visual Studio Code](./media/commands.png)
 
