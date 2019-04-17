@@ -1,10 +1,10 @@
 # dotnet CLI Explorer Extension for Visual Studio Code
 
-A [Visual Studio Code](https://code.visualstudio.com/) extension that provides support for .NET CLI (Command Line Interface) in Visual Studio Code.
+A [Visual Studio Code](https://code.visualstudio.com/) extension that provides support for .NET Core CLI (Command Line Interface) in Visual Studio Code. Like a cheatsheet but interactive.
 
 ## Features
 
-* Finc Commands through a multistep quickpick workflow.
+* Find Commands through a multistep quickpick workflow.
 
 ![dotnet CLI Commands in Visual Studio Code](./media/commands.png)
 
@@ -16,7 +16,7 @@ A [Visual Studio Code](https://code.visualstudio.com/) extension that provides s
 
 ![dotnet explorer information message](./media/message.png)
 
-* The user can ask for details and a webview with usage and note  is displayed.
+* The user can ask for details and a webview with usage and note is displayed.
 
 ![dotnet explorer Webview](./media/webview.png)
 
